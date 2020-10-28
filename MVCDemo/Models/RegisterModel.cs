@@ -13,6 +13,6 @@ namespace MVCDemo.Models
 
         public string Emeil { get; set; }
 
-        public long IdentidierNumber { get; set; }
+        public long IdentifierNumber { get; set; }
     }
 }

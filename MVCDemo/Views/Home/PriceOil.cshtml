@@ -1,0 +1,52 @@
+﻿@model IEnumerable<MVCDemo.Models.Result>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Price Oil <i class="fas fa-gas-pump"></i></h2>
+
+<table class="table table-bordered table-striped table-hover">
+    <tr class="text-info">
+        <th>
+            @Html.DisplayNameFor(model => model.currency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lpg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.diesel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gasoline)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.country)
+        </th>
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr style="background-color:lightslategray">
+                <td>
+                    @Html.DisplayFor(modelItem => item.currency)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.lpg)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.diesel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.gasoline)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.country)
+                </td>
+            </tr>
+        }
+    }
+
+
+</table>

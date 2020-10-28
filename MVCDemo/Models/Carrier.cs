@@ -18,7 +18,7 @@ namespace MVCDemo.Models
         public int CarrierId { get; set; }
 
         public string Name { get; set; }
-
+        [EmailAddress]
         public string Emeil { get; set; }
 
         public long CarrierIdentificator { get; set; }

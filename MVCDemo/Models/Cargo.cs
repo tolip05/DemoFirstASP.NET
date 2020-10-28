@@ -17,6 +17,8 @@ namespace MVCDemo.Models
 
         public double PricePerKilometer { get; set; }
 
+        public int Weight { get; set; }
+
         public int FromLocationId { get; set; }
 
         public Location FromLocation { get; set; }

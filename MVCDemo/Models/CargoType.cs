@@ -10,6 +10,6 @@ namespace MVCDemo.Models
         Liquid,
         Food,
         Dangerous,
-        Animal,
+        Animal
     }
 }

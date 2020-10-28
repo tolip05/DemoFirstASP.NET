@@ -1,0 +1,53 @@
+﻿@model  MVCDemo.Models.Covid
+<h2>Check for Covid-19 <i class="fas fa-head-side-mask"></i></h2>
+<div style="margin-top:40px">
+    @using (Html.BeginForm("Covid", "Home", FormMethod.Get))
+    {
+    
+        @Html.TextBoxFor(x => x.Country, new { @class = "form-control" })
+        <button type="submit" class="btn btn-danger">Check Covid-19</button>}
+    
+  
+
+    @if (Model.Roo != null)
+    {
+<div class="row ">
+    <div class="col-md-2 text-success">
+        Recovered:
+        <div class="text-danger">
+            @Model.Roo.Data.recovered
+        </div>
+    </div>
+    <div class="col-md-2 text-success">
+        Deaths:
+        <div class="text-danger">
+            @Model.Roo.Data.deaths
+        </div>
+
+    </div>
+    <div class="col-md-2 text-success">
+        Confirmed:
+        <div class="text-danger">
+            @Model.Roo.Data.confirmed
+        </div>
+    </div>
+    <div class="col-md-2 text-success">
+        LastChecked:
+        <div class="text-danger">
+            @Model.Roo.Data.lastChecked
+        </div>
+    </div>
+    <div class="col-md-2 text-success">
+        LastReported:
+        <div class="text-danger">
+            @Model.Roo.Data.lastReported
+        </div>
+    </div>
+    <div class="col-md-2 text-success">
+        Location:
+        <div class="text-danger">
+            @Model.Roo.Data.location
+        </div>
+    </div>
+</div>}
+</div>

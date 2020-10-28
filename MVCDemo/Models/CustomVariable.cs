@@ -10,8 +10,6 @@ namespace MVCDemo.Models
 {
     public class CustomVariable
     {
-        public static long idKey { get; set; }
-
-
+        public int Id { get; set; }
     }
 }

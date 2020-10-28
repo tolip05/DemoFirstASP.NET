@@ -8,5 +8,7 @@ namespace MVCDemo.Models
     public class IdentifierKey
     {
         public long Key { get; set; }
+
+        public string Emeil { get; set; }
     }
 }

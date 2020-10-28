@@ -76,8 +76,13 @@ C:\Users\Kosta\source\repos\MVCDemo\MVCDemo\obj\Debug\MVCDemo.csproj.CoreCompile
 C:\Users\Kosta\source\repos\MVCDemo\MVCDemo\obj\Debug\MVCDemo.csproj.CopyComplete
 C:\Users\Kosta\source\repos\MVCDemo\MVCDemo\obj\Debug\MVCDemo.dll
 C:\Users\Kosta\source\repos\MVCDemo\MVCDemo\obj\Debug\MVCDemo.pdb
-C:\Users\Kosta\source\repos\MVCDemo\MVCDemo\obj\Debug\MVCDemo.csprojAssemblyReference.cache
 C:\Users\Kosta\source\repos\MVCDemo\MVCDemo\bin\EntityFramework.dll
 C:\Users\Kosta\source\repos\MVCDemo\MVCDemo\bin\EntityFramework.SqlServer.dll
 C:\Users\Kosta\source\repos\MVCDemo\MVCDemo\bin\EntityFramework.xml
 C:\Users\Kosta\source\repos\MVCDemo\MVCDemo\bin\EntityFramework.SqlServer.xml
+C:\Users\Kosta\source\repos\MVCDemo\MVCDemo\obj\Debug\MVCDemo.Migrations.InitialCreate.resources
+C:\Users\Kosta\source\repos\MVCDemo\MVCDemo\obj\Debug\MVCDemo.csproj.GenerateResource.cache
+C:\Users\Kosta\source\repos\MVCDemo\MVCDemo\obj\Debug\MVCDemo.Migrations.name.resources
+C:\Users\Kosta\source\repos\MVCDemo\MVCDemo\bin\RestSharp.dll
+C:\Users\Kosta\source\repos\MVCDemo\MVCDemo\bin\RestSharp.xml
+C:\Users\Kosta\source\repos\MVCDemo\MVCDemo\obj\Debug\MVCDemo.csprojAssemblyReference.cache

@@ -53,6 +53,9 @@
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="RestSharp, Version=106.11.7.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.11.7\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -130,33 +133,56 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CargoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LocationController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Data\MVCDemoContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010212015373_InitialCreate.cs" />
+    <Compile Include="Migrations\202010212015373_InitialCreate.designer.cs">
+      <DependentUpon>202010212015373_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010241303329_name.cs" />
+    <Compile Include="Migrations\202010241303329_name.designer.cs">
+      <DependentUpon>202010241303329_name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cargo.cs" />
+    <Compile Include="Models\CargoModel.cs" />
     <Compile Include="Models\CargoType.cs" />
+    <Compile Include="Models\CargoView.cs" />
     <Compile Include="Models\Carrier.cs" />
+    <Compile Include="Models\Covid.cs" />
     <Compile Include="Models\CustomVariable.cs" />
     <Compile Include="Models\Forwarder.cs" />
     <Compile Include="Models\Identificator.cs" />
     <Compile Include="Models\IdentificatorType.cs" />
     <Compile Include="Models\IdentifierKey.cs" />
     <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\LocationModel.cs" />
+    <Compile Include="Models\ModelStaticList.cs" />
+    <Compile Include="Models\ModelWithIdAndEmeil.cs" />
+    <Compile Include="Models\Oil.cs" />
     <Compile Include="Models\RegisterModel.cs" />
+    <Compile Include="Models\SearchModel.cs" />
     <Compile Include="Models\TransportType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\fontawesome.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="webfonts\fa-brands-400.svg" />
+    <Content Include="webfonts\fa-regular-400.svg" />
+    <Content Include="webfonts\fa-solid-900.svg" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -185,6 +211,34 @@
     <Content Include="Views\Register\Register.cshtml" />
     <Content Include="Views\Register\Registered.cshtml" />
     <Content Include="Views\Register\Index.cshtml" />
+    <Content Include="Views\Location\Location.cshtml" />
+    <Content Include="Views\Location\Index.cshtml" />
+    <Content Include="Views\Location\Details.cshtml" />
+    <Content Include="Views\Cargo\Check.cshtml" />
+    <Content Include="Views\Cargo\Cargo.cshtml" />
+    <Content Include="Views\Cargo\AllCargoes.cshtml" />
+    <Content Include="Views\Cargo\Details.cshtml" />
+    <Content Include="Views\Cargo\AddedCargo.cshtml" />
+    <Content Include="webfonts\fa-brands-400.eot" />
+    <Content Include="webfonts\fa-brands-400.ttf" />
+    <Content Include="webfonts\fa-brands-400.woff" />
+    <Content Include="webfonts\fa-brands-400.woff2" />
+    <Content Include="webfonts\fa-regular-400.eot" />
+    <Content Include="webfonts\fa-regular-400.ttf" />
+    <Content Include="webfonts\fa-regular-400.woff" />
+    <Content Include="webfonts\fa-regular-400.woff2" />
+    <Content Include="webfonts\fa-solid-900.eot" />
+    <Content Include="webfonts\fa-solid-900.ttf" />
+    <Content Include="webfonts\fa-solid-900.woff" />
+    <Content Include="webfonts\fa-solid-900.woff2" />
+    <Content Include="Views\Home\Covid.cshtml" />
+    <Content Include="Views\Home\PriceOil.cshtml" />
+    <Content Include="Views\Cargo\ErrorUser.cshtml" />
+    <Content Include="Views\Location\ErrorUser.cshtml" />
+    <Content Include="Views\Cargo\MyCargoes.cshtml" />
+    <Content Include="Views\Cargo\AllMyCargoes.cshtml" />
+    <Content Include="Views\Cargo\SearchedCargoes.cshtml" />
+    <Content Include="Views\Cargo\SearchCargo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -197,6 +251,14 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202010212015373_InitialCreate.resx">
+      <DependentUpon>202010212015373_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010241303329_name.resx">
+      <DependentUpon>202010241303329_name.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

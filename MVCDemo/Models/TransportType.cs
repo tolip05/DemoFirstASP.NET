@@ -9,6 +9,7 @@ namespace MVCDemo.Models
     {
         Railway,
         Water,
-        Air
+        Air,
+        Truck
     }
 }

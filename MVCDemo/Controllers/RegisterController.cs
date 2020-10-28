@@ -26,7 +26,7 @@ namespace MVCDemo.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register([Bind(Include = "Name,TypeUser,Emeil,IdentidierNumber")] RegisterModel model)
+        public ActionResult Register([Bind(Include = "Name,TypeUser,Emeil,IdentifierNumber")] RegisterModel model)
         {
             if (ModelState.IsValid)
             {
@@ -34,8 +34,8 @@ namespace MVCDemo.Controllers
                 {
                     var forwarder = new Forwarder();
                     forwarder.Name = model.Name;
-                    forwarder.Emeil = model.Name;
-                    forwarder.ForwarderIdentificator = model.IdentidierNumber;
+                    forwarder.Emeil = model.Emeil;
+                    forwarder.ForwarderIdentificator = model.IdentifierNumber;
                     db.Fowarders.Add(forwarder);
                     db.SaveChanges();
                     return RedirectToAction("Registered");
@@ -45,7 +45,7 @@ namespace MVCDemo.Controllers
                     var carrier = new Carrier();
                     carrier.Name = model.Name;
                     carrier.Emeil = model.Emeil;
-                    carrier.CarrierIdentificator = model.IdentidierNumber;
+                    carrier.CarrierIdentificator = model.IdentifierNumber;
                     db.Carriers.Add(carrier);
                     db.SaveChanges();
                     return RedirectToAction("Registered");

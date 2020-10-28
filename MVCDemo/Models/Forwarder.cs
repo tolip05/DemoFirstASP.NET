@@ -19,6 +19,7 @@ namespace MVCDemo.Models
 
         public string Name { get; set; }
 
+        [EmailAddress]
         public string Emeil { get; set; }
 
         public long ForwarderIdentificator { get; set; }

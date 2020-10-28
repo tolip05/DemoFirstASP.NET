@@ -1,0 +1,50 @@
+﻿@model MVCDemo.Models.Location
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="row">
+    <div class="col-md-6">
+        <div class="col-md-2">
+            @Html.DisplayNameFor(model => model.Name)
+            <div class="text-success">
+                @Html.DisplayFor(model => model.Name)
+            </div>
+        </div>
+        <div class="col-md-2">
+            @Html.DisplayNameFor(model => model.Latitude)
+            <div id="lat" class="text-success">
+                @Html.DisplayFor(model => model.Latitude)
+            </div>
+           
+        </div>
+        <div class="col-md-2">
+            @Html.DisplayNameFor(model => model.Longitude)
+            <div id="long" class="text-success">
+                 @Html.DisplayFor(model => model.Longitude)  
+            </div>
+            
+        </div>
+    </div>
+
+        <div class="col-md-6">
+            <div id="map" style="height:400px; width:400px">
+                <script>
+                var map;
+                    
+                    var latitude = @Model.Latitude;
+                    var longetude = @Model.Longitude;
+                    function initMap() {
+                        map = new google.maps.Map(document.getElementById('map'), {
+                            center: { lat: latitude, lng: longetude},
+                        zoom: 8
+                    });
+                }
+                </script>
+                <script defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvir0_O0VWcEkPTW61rNEMFzPQWAj40eM&callback=initMap">
+                </script>
+            </div>
+            
+        </div>
+    </div>
