@@ -239,6 +239,7 @@
     <Content Include="Views\Cargo\AllMyCargoes.cshtml" />
     <Content Include="Views\Cargo\SearchedCargoes.cshtml" />
     <Content Include="Views\Cargo\SearchCargo.cshtml" />
+    <Content Include="Views\Register\Exist.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

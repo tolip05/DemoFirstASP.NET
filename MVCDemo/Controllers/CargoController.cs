@@ -350,7 +350,8 @@ namespace MVCDemo.Controllers
             && (fromLocation.LocationId == 0 || c.FromLocationId == fromLocation.LocationId)
             && (forLocation.LocationId == 0 || c.ForLocationId == forLocation.LocationId)
             && (model.TransportType == "empty" || c.TransportType.ToString() == model.TransportType)
-            && (model.CargoType == "empty" || c.CargoType.ToString() == model.CargoType)).ToList();
+            && (model.CargoType == "empty" || c.CargoType.ToString() == model.CargoType)
+            && c.CarrierId == null).ToList();
             List<Cargo> results = cargoes.Where(c => c.CarrierId == null).ToList();
             ModelStaticList.cargoModels = new List<CargoView>();
             foreach (var cargo in results)

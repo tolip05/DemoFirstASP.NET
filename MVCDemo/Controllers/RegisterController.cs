@@ -18,7 +18,10 @@ namespace MVCDemo.Controllers
             return View();
         }
 
-
+        public ActionResult Exist()
+        {
+            return View();
+        }
         // GET: Register
         public ActionResult Register()
         {
@@ -32,6 +35,21 @@ namespace MVCDemo.Controllers
             {
                 if (model.TypeUser.ToLower() == "forwarder")
                 {
+
+                    Forwarder checkForwarder = null;
+                    try
+                    {
+                         checkForwarder = db.Fowarders
+                        .Where(x => x.Emeil == model.Emeil).First();
+                    }
+                    catch (Exception)
+                    {
+                        checkForwarder = null;
+                    }
+                    if (checkForwarder != null)
+                    {
+                        return RedirectToAction("Exist");
+                    }
                     var forwarder = new Forwarder();
                     forwarder.Name = model.Name;
                     forwarder.Emeil = model.Emeil;
@@ -42,6 +60,21 @@ namespace MVCDemo.Controllers
                 }
                 else if (model.TypeUser.ToLower() == "carrier")
                 {
+                    Carrier checkCarrier = null;
+                    try
+                    {
+                        checkCarrier = db.Carriers
+                       .Where(x => x.Emeil == model.Emeil).First();
+                    }
+                    catch (Exception)
+                    {
+                        checkCarrier = null;
+                    }
+                    if (checkCarrier != null)
+                    {
+                        return RedirectToAction("Exist");
+                    }
+
                     var carrier = new Carrier();
                     carrier.Name = model.Name;
                     carrier.Emeil = model.Emeil;
