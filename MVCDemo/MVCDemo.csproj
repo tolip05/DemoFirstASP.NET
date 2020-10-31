@@ -240,6 +240,7 @@
     <Content Include="Views\Cargo\SearchedCargoes.cshtml" />
     <Content Include="Views\Cargo\SearchCargo.cshtml" />
     <Content Include="Views\Register\Exist.cshtml" />
+    <Content Include="Views\Cargo\WrongDestination.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

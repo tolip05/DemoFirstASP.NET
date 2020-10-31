@@ -18,6 +18,10 @@ namespace MVCDemo.Controllers
         {
             return View();
         }
+        public ActionResult WrongDestination()
+        {
+            return View();
+        }
 
         public ActionResult ErrorUser()
         {
@@ -127,8 +131,18 @@ namespace MVCDemo.Controllers
             }
 
             var cargo = new Cargo();
-            Location fromLocation = db.Locations.Where(l => l.Name == model.FromLocation).First();
-            Location forLocation = db.Locations.Where(l => l.Name == model.ForLocation).First();
+            Location fromLocation = null;
+            Location forLocation = null;
+            try
+            {
+                fromLocation = db.Locations.Where(l => l.Name == model.FromLocation).First();
+                forLocation = db.Locations.Where(l => l.Name == model.ForLocation).First();
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("WrongDestination");
+            }
+            
             if (fromLocation == null || forLocation == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
